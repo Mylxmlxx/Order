@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group11.order.mapper.DishInventoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.group11.order.domain.DishInventory">
+            <id property="dishId" column="dish_id" jdbcType="INTEGER"/>
+            <result property="stockQuantity" column="stock_quantity" jdbcType="INTEGER"/>
+            <result property="salesQuantity" column="sales_quantity" jdbcType="INTEGER"/>
+            <result property="shelfTime" column="shelf_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        dish_id,stock_quantity,sales_quantity,
+        shelf_time
+    </sql>
+</mapper>

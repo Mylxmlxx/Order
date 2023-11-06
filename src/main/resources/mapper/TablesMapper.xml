@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group11.order.mapper.TablesMapper">
+
+    <resultMap id="BaseResultMap" type="com.group11.order.domain.Tables">
+            <id property="tableId" column="table_id" jdbcType="INTEGER"/>
+            <result property="seatingCapacity" column="seating_capacity" jdbcType="INTEGER"/>
+            <result property="locationDescription" column="location_description" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        table_id,seating_capacity,location_description
+    </sql>
+</mapper>
