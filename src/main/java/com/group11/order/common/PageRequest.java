@@ -1,6 +1,5 @@
 package com.group11.order.common;
 
-import com.yupi.springbootinit.constant.CommonConstant;
 import lombok.Data;
 
 @Data
