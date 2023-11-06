@@ -5,9 +5,7 @@ import com.group11.order.common.ResultUtils;
 import com.group11.order.domain.DishInventory;
 import com.group11.order.service.DishInventoryService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,7 +16,8 @@ import java.util.List;
  * @description TODO
  * @date 2023/11/6 8:22
  */
-@Controller("/dishInventory")
+@RestController()
+@RequestMapping("/dishInventory")
 public class DishInventoryController {
     @Resource
     DishInventoryService dishInventoryService;
