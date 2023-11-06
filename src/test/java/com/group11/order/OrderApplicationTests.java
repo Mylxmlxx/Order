@@ -16,7 +16,9 @@ class OrderApplicationTests {
     @Test
     void contextLoads() {
         List<Users> list = usersService.list();
-        System.out.println(list);
+        for (Users users : list) {
+            System.out.println(users);
+        }
     }
 
 }

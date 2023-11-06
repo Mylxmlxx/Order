@@ -1,13 +1,8 @@
-package com.yupi.springbootinit.exception;
+package com.group11.order.exception;
 
-import com.yupi.springbootinit.common.ErrorCode;
 
-/**
- * 抛异常工具类
- *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
- */
+import com.group11.order.common.ErrorCode;
+
 public class ThrowUtils {
 
     /**

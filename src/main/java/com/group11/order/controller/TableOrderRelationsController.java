@@ -2,8 +2,8 @@ package com.group11.order.controller;
 
 import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
-import com.group11.order.domain.Users;
-import com.group11.order.service.UsersService;
+import com.group11.order.domain.TableOrderRelations;
+import com.group11.order.service.TableOrderRelationsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,51 +18,51 @@ import java.util.List;
  * @description TODO
  * @date 2023/11/6 8:22
  */
-@Controller("/users")
-public class UsersController {
+@Controller("/tableOrderRelations")
+public class TableOrderRelationsController {
     @Resource
-    UsersService usersService;
+    TableOrderRelationsService tableOrderRelationsService;
 
     /**
-     * 查询所有用户
+     * 查询所有tableOrderRelations
      *
      * @return
      */
     @GetMapping("/all")
-    public BaseResponse<List<Users>> all() {
-        return ResultUtils.success(usersService.list());
+    public BaseResponse<List<TableOrderRelations>> all() {
+        return ResultUtils.success(tableOrderRelationsService.list());
     }
 
     /**
-     * 根据id查询用户
+     * 根据id查询tableOrderRelations
      *
      * @param id
      * @return
      */
     @PostMapping("/delete/{id}")
     public BaseResponse<Boolean> delete(@PathVariable("id") Integer id) {
-        return ResultUtils.success(usersService.removeById(id));
+        return ResultUtils.success(tableOrderRelationsService.removeById(id));
     }
 
     /**
-     * 更新用户
+     * 更新tableOrderRelations
      *
-     * @param users
+     * @param tableOrderRelations
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Users users) {
-        return ResultUtils.success(usersService.updateById(users));
+    public BaseResponse<Boolean> update(TableOrderRelations tableOrderRelations) {
+        return ResultUtils.success(tableOrderRelationsService.updateById(tableOrderRelations));
     }
 
     /**
-     * 添加用户
+     * 添加tableOrderRelations
      *
-     * @param users
+     * @param tableOrderRelations
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Users users) {
-        return ResultUtils.success(usersService.save(users));
+    public BaseResponse<Boolean> add(TableOrderRelations tableOrderRelations) {
+        return ResultUtils.success(tableOrderRelationsService.save(tableOrderRelations));
     }
 }

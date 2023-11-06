@@ -1,18 +1,13 @@
-package com.yupi.springbootinit.exception;
+package com.group11.order.exception;
 
-import com.yupi.springbootinit.common.BaseResponse;
-import com.yupi.springbootinit.common.ErrorCode;
-import com.yupi.springbootinit.common.ResultUtils;
+
+import com.group11.order.common.BaseResponse;
+import com.group11.order.common.ErrorCode;
+import com.group11.order.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-/**
- * 全局异常处理器
- *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
- */
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {

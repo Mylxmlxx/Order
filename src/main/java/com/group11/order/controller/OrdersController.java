@@ -18,51 +18,51 @@ import java.util.List;
  * @description TODO
  * @date 2023/11/6 8:22
  */
-@Controller("/users")
+@Controller("/orders")
 public class OrdersController {
     @Resource
-    OrdersService usersService;
+    OrdersService ordersService;
 
     /**
-     * 查询所有用户
+     * 查询所有orders
      *
      * @return
      */
     @GetMapping("/all")
     public BaseResponse<List<Orders>> all() {
-        return ResultUtils.success(usersService.list());
+        return ResultUtils.success(ordersService.list());
     }
 
     /**
-     * 根据id查询用户
+     * 根据id查询orders
      *
      * @param id
      * @return
      */
     @PostMapping("/delete/{id}")
     public BaseResponse<Boolean> delete(@PathVariable("id") Integer id) {
-        return ResultUtils.success(usersService.removeById(id));
+        return ResultUtils.success(ordersService.removeById(id));
     }
 
     /**
-     * 更新用户
+     * 更新orders
      *
-     * @param users
+     * @param orders
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Orders users) {
-        return ResultUtils.success(usersService.updateById(users));
+    public BaseResponse<Boolean> update(Orders orders) {
+        return ResultUtils.success(ordersService.updateById(orders));
     }
 
     /**
-     * 添加用户
+     * 添加orders
      *
-     * @param users
+     * @param orders
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Orders users) {
-        return ResultUtils.success(usersService.save(users));
+    public BaseResponse<Boolean> add(Orders orders) {
+        return ResultUtils.success(ordersService.save(orders));
     }
 }

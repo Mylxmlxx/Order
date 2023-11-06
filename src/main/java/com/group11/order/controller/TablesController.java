@@ -2,8 +2,8 @@ package com.group11.order.controller;
 
 import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
-import com.group11.order.domain.Users;
-import com.group11.order.service.UsersService;
+import com.group11.order.domain.Tables;
+import com.group11.order.service.TablesService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,51 +18,51 @@ import java.util.List;
  * @description TODO
  * @date 2023/11/6 8:22
  */
-@Controller("/users")
-public class UsersController {
+@Controller("/tables")
+public class TablesController {
     @Resource
-    UsersService usersService;
+    TablesService tablesService;
 
     /**
-     * 查询所有用户
+     * 查询所有tables
      *
      * @return
      */
     @GetMapping("/all")
-    public BaseResponse<List<Users>> all() {
-        return ResultUtils.success(usersService.list());
+    public BaseResponse<List<Tables>> all() {
+        return ResultUtils.success(tablesService.list());
     }
 
     /**
-     * 根据id查询用户
+     * 根据id查询tables
      *
      * @param id
      * @return
      */
     @PostMapping("/delete/{id}")
     public BaseResponse<Boolean> delete(@PathVariable("id") Integer id) {
-        return ResultUtils.success(usersService.removeById(id));
+        return ResultUtils.success(tablesService.removeById(id));
     }
 
     /**
-     * 更新用户
+     * 更新tables
      *
-     * @param users
+     * @param tables
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Users users) {
-        return ResultUtils.success(usersService.updateById(users));
+    public BaseResponse<Boolean> update(Tables tables) {
+        return ResultUtils.success(tablesService.updateById(tables));
     }
 
     /**
-     * 添加用户
+     * 添加tables
      *
-     * @param users
+     * @param tables
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Users users) {
-        return ResultUtils.success(usersService.save(users));
+    public BaseResponse<Boolean> add(Tables tables) {
+        return ResultUtils.success(tablesService.save(tables));
     }
 }

@@ -2,8 +2,8 @@ package com.group11.order.controller;
 
 import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
-import com.group11.order.domain.Users;
-import com.group11.order.service.UsersService;
+import com.group11.order.domain.DishInventory;
+import com.group11.order.service.DishInventoryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,51 +18,51 @@ import java.util.List;
  * @description TODO
  * @date 2023/11/6 8:22
  */
-@Controller("/users")
-public class UsersController {
+@Controller("/dishInventory")
+public class DishInventoryController {
     @Resource
-    UsersService usersService;
+    DishInventoryService dishInventoryService;
 
     /**
-     * 查询所有用户
+     * 查询所有dishInventory
      *
      * @return
      */
     @GetMapping("/all")
-    public BaseResponse<List<Users>> all() {
-        return ResultUtils.success(usersService.list());
+    public BaseResponse<List<DishInventory>> all() {
+        return ResultUtils.success(dishInventoryService.list());
     }
 
     /**
-     * 根据id查询用户
+     * 根据id查询dishInventory
      *
      * @param id
      * @return
      */
     @PostMapping("/delete/{id}")
     public BaseResponse<Boolean> delete(@PathVariable("id") Integer id) {
-        return ResultUtils.success(usersService.removeById(id));
+        return ResultUtils.success(dishInventoryService.removeById(id));
     }
 
     /**
-     * 更新用户
+     * 更新dishInventory
      *
-     * @param users
+     * @param dishInventory
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Users users) {
-        return ResultUtils.success(usersService.updateById(users));
+    public BaseResponse<Boolean> update(DishInventory dishInventory) {
+        return ResultUtils.success(dishInventoryService.updateById(dishInventory));
     }
 
     /**
-     * 添加用户
+     * 添加dishInventory
      *
-     * @param users
+     * @param dishInventory
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Users users) {
-        return ResultUtils.success(usersService.save(users));
+    public BaseResponse<Boolean> add(DishInventory dishInventory) {
+        return ResultUtils.success(dishInventoryService.save(dishInventory));
     }
 }
