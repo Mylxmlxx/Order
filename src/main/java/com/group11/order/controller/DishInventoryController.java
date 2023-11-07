@@ -50,7 +50,7 @@ public class DishInventoryController {
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(DishInventory dishInventory) {
+    public BaseResponse<Boolean> update(@RequestBody DishInventory dishInventory) {
         return ResultUtils.success(dishInventoryService.updateById(dishInventory));
     }
 

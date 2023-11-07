@@ -50,7 +50,7 @@ public class TablesController {
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Tables tables) {
+    public BaseResponse<Boolean> update(@RequestBody Tables tables) {
         return ResultUtils.success(tablesService.updateById(tables));
     }
 

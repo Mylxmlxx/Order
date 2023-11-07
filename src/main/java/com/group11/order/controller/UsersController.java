@@ -49,7 +49,7 @@ public class UsersController {
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(Users users) {
+    public BaseResponse<Boolean> update(@RequestBody Users users) {
         return ResultUtils.success(usersService.updateById(users));
     }
 

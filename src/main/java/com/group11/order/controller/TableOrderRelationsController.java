@@ -50,7 +50,7 @@ public class TableOrderRelationsController {
      * @return
      */
     @PostMapping("/update")
-    public BaseResponse<Boolean> update(TableOrderRelations tableOrderRelations) {
+    public BaseResponse<Boolean> update(@RequestBody TableOrderRelations tableOrderRelations) {
         return ResultUtils.success(tableOrderRelationsService.updateById(tableOrderRelations));
     }
 
