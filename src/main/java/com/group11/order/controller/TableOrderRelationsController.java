@@ -61,7 +61,7 @@ public class TableOrderRelationsController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(TableOrderRelations tableOrderRelations) {
+    public BaseResponse<Boolean> add(@RequestBody TableOrderRelations tableOrderRelations) {
         return ResultUtils.success(tableOrderRelationsService.save(tableOrderRelations));
     }
 }

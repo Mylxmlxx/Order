@@ -61,7 +61,7 @@ public class TablesController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Tables tables) {
+    public BaseResponse<Boolean> add(@RequestBody Tables tables) {
         return ResultUtils.success(tablesService.save(tables));
     }
 }

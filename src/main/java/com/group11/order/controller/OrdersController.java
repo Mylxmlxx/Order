@@ -4,7 +4,6 @@ import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
 import com.group11.order.domain.Orders;
 import com.group11.order.service.OrdersService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -61,7 +60,7 @@ public class OrdersController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Orders orders) {
+    public BaseResponse<Boolean> add(@RequestBody Orders orders) {
         return ResultUtils.success(ordersService.save(orders));
     }
 }

@@ -61,7 +61,7 @@ public class UserOrderRelationsController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(UserOrderRelations userOrderRelations) {
+    public BaseResponse<Boolean> add(@RequestBody UserOrderRelations userOrderRelations) {
         return ResultUtils.success(userOrderRelationsService.save(userOrderRelations));
     }
 }

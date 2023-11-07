@@ -4,7 +4,6 @@ import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
 import com.group11.order.domain.Users;
 import com.group11.order.service.UsersService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -61,7 +60,7 @@ public class UsersController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Users users) {
+    public BaseResponse<Boolean> add(@RequestBody Users users) {
         return ResultUtils.success(usersService.save(users));
     }
 }

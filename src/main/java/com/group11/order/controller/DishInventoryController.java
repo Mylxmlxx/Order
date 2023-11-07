@@ -61,7 +61,7 @@ public class DishInventoryController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(DishInventory dishInventory) {
+    public BaseResponse<Boolean> add(@RequestBody DishInventory dishInventory) {
         return ResultUtils.success(dishInventoryService.save(dishInventory));
     }
 }

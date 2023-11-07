@@ -4,7 +4,6 @@ import com.group11.order.common.BaseResponse;
 import com.group11.order.common.ResultUtils;
 import com.group11.order.domain.Dishes;
 import com.group11.order.service.DishesService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -61,7 +60,8 @@ public class DishesController {
      * @return
      */
     @PostMapping("/add")
-    public BaseResponse<Boolean> add(Dishes dishes) {
+    public BaseResponse<Boolean> add(@RequestBody Dishes dishes) {
+
         return ResultUtils.success(dishesService.save(dishes));
     }
 }
